@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
-import { getStorage, ref } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-storage.js";
+import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-storage.js";
 
 //const initializeApp = require("firebase/app");
 //const getStorage = require("firebase/storage");
