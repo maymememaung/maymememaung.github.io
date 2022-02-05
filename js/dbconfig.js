@@ -1,6 +1,9 @@
-import { initializeApp } from "firebase/app";
-import { getStorage, ref } from "firebase/storage";
+//import { initializeApp } from "firebase/app";
+//import { getStorage, ref } from "firebase/storage";
 
+const initializeApp = require("firebase/app");
+const getStorage = require("firebase/storage");
+const ref = require("firebase/storage");
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
