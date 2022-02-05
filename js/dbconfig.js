@@ -20,7 +20,7 @@ const storage = getStorage(firebaseApp);
 const imgRef = ref(storage, 'luffy.jpg');
 
 // Get the download URL
-getDownloadURL(starsRef)
+getDownloadURL(imgRef)
   .then((url) => {
     // Insert url into an <img> tag to "download"
     let img = document.getElementById('luffy');
