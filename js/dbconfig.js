@@ -1,11 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
 import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-storage.js";
 
-//const initializeApp = require("firebase/app");
-//const getStorage = require("firebase/storage");
-//const ref = require("firebase/storage");
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBMsvknmUwQ7d1SWtVBbx_st7iAla5aA0k",
     authDomain: "personal-portfolio-956e1.firebaseapp.com",
@@ -18,14 +13,11 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 
-// Get a reference to the storage service, which is used to create references in your storage bucket
 const storage = getStorage(firebaseApp);
 const imgRef = ref(storage, 'Images/luffy.jpg');
 
-// Get the download URL
 getDownloadURL(imgRef)
   .then((url) => {
-    // Insert url into an <img> tag to "download"
     let img = document.getElementById('luffy');
     img.src = url;
   })
@@ -39,12 +31,6 @@ getDownloadURL(imgRef)
       case 'storage/unauthorized':
         // User doesn't have permission to access the object
         break;
-      case 'storage/canceled':
-        // User canceled the upload
-        break;
-
-      // ...
-
       case 'storage/unknown':
         // Unknown error occurred, inspect the server response
         break;
