@@ -1,13 +1,13 @@
-import { firebaseApp } from "./dbconfig";
+import { firebaseApp } from "./dbconfig.js";
 import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-storage.js";
 
 const storage = getStorage(firebaseApp);
-const banner = ref(storage, 'Images/portfolio-banner.jpeg');
+const banner = ref(storage, 'Images/portfolio-banner.jpg');
 
 getDownloadURL(banner)
   .then((url) => {
-    let img = document.getElementById('banner-main');
-    img.src = url;
+    const bannerImg = document.getElementById('main-page-banner');
+    bannerImg.style.backgroundImage = "url("+url+")";
   })
   .catch((error) => {
     // A full list of error codes is available at
