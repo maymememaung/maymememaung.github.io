@@ -20,7 +20,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 
 // Get a reference to the storage service, which is used to create references in your storage bucket
 const storage = getStorage(firebaseApp);
-const imgRef = ref(storage, 'luffy.jpg');
+const imgRef = ref(storage, 'Images/luffy.jpg');
 
 // Get the download URL
 getDownloadURL(imgRef)
