@@ -76,6 +76,21 @@ body{
     text-align: center;
 }
 
+#social-links-container{
+    display: flex;
+    justify-content: center;
+    column-gap: 2%;
+}
+
 .social-link{
     text-decoration: none;
+}
+
+.social-link svg{
+    transform: scale(120%);
+    color: black;
+}
+
+.social-link svg:hover{
+    color: #ad9242;
 }
