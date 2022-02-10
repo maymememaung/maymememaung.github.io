@@ -94,3 +94,7 @@ body{
 .social-link svg:hover{
     color: #ad9242;
 }
+
+.social-link svg:active{
+    color: black;
+}
