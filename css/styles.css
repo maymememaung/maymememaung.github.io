@@ -68,5 +68,14 @@ body{
     float: left;
     max-width: 50%;
     text-align: center;
-    margin: 0 0 0 5%;
+    margin: 0 0 10% 5%;
+}
+
+.footer{
+    clear: both;
+    text-align: center;
+}
+
+.social-link{
+    text-decoration: none;
 }
