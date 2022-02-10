@@ -2,12 +2,13 @@ import { firebaseApp } from "./dbconfig.js";
 import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-storage.js";
 
 const storage = getStorage(firebaseApp);
-const banner = ref(storage, 'Images/portfolio-banner.jpg');
+const bgImage = ref(storage, 'Images/site-background.jpg');
+const pfImage = ref(storage, 'Images/portfolio-image.jpg');
 
-getDownloadURL(banner)
+getDownloadURL(bgImage)
   .then((url) => {
-    const bannerImg = document.getElementById('main-page-banner');
-    bannerImg.style.backgroundImage = "url("+url+")";
+    const bodyBg = document.getElementsByTagName('body')[0];
+    bodyBg.style.backgroundImage = "url("+url+")";
   })
   .catch((error) => {
     // A full list of error codes is available at
@@ -21,6 +22,22 @@ getDownloadURL(banner)
         break;
       case 'storage/unknown':
         // Unknown error occurred, inspect the server response
+        break;
+    }
+  });
+
+  getDownloadURL(pfImage)
+  .then((url) => {
+    const pf = document.getElementById('pfImage');
+    pf.src = url;
+  })
+  .catch((error) => {
+    switch (error.code) {
+      case 'storage/object-not-found':
+        break;
+      case 'storage/unauthorized':
+        break;
+      case 'storage/unknown':
         break;
     }
   });
