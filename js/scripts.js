@@ -4,6 +4,7 @@ import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebas
 const storage = getStorage(firebaseApp);
 const bgImage = ref(storage, 'Images/site-background.jpg');
 const pfImage = ref(storage, 'Images/portfolio-image.jpg');
+const resume = ref(storage, 'Images/luffy.jpg');
 
 getDownloadURL(bgImage)
   .then((url) => {
@@ -41,3 +42,20 @@ getDownloadURL(bgImage)
         break;
     }
   });
+/*
+  getDownloadURL(resume)
+  .then((url) => {
+    const resumeLink = document.getElementById('download-resume-link');
+    resumeLink.href = url;
+  })
+  .catch((error) => {
+    switch (error.code) {
+      case 'storage/object-not-found':
+        break;
+      case 'storage/unauthorized':
+        break;
+      case 'storage/unknown':
+        break;
+    }
+  });
+*/

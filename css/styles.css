@@ -49,6 +49,10 @@ body{
     color: #696969;
 }
 
+#download-resume-link svg{
+    transform: scale(65%);
+}
+
 #pfImage{
     width: 30%;
     float: right;
