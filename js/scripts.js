@@ -4,12 +4,12 @@ import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebas
 const storage = getStorage(firebaseApp);
 const bgImage = ref(storage, 'Images/site-background.jpg');
 const pfImage = ref(storage, 'Images/portfolio-image.jpg');
-const resume = ref(storage, 'Images/luffy.jpg');
 const featured1 = ref(storage, 'Images/Featured_1.jpg');
 const featured2 = ref(storage, 'Images/Featured_2.jpg');
 const featured3 = ref(storage, 'Images/Featured_3.jpg');
 const featured4 = ref(storage, 'Images/Featured_4.jpg');
 
+/*
 let lastScroll = 0;
 window.addEventListener("scroll", () => {
 
@@ -24,6 +24,7 @@ window.addEventListener("scroll", () => {
   }
   lastScroll = currScroll;
 });
+*/
 
 getDownloadURL(bgImage)
   .then((url) => {
