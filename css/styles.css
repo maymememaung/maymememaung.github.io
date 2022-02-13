@@ -54,6 +54,7 @@ body{
     width: 30%;
     float: right;
     margin: 10% 12% 0 0;
+    border: solid #dcbc5c 5px;
 }
 
 #short-intro{
@@ -71,12 +72,56 @@ body{
     float: left;
     max-width: 50%;
     text-align: center;
-    margin: 0 0 10% 5%;
+    margin: 0 0 15% 5%;
+}
+
+#scroll-container{
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 1.75em;
+    clear: both;
+    margin: 10% 0 5% 4%;
+}
+
+#featured-container {
+    margin-bottom: 10%;
+}
+
+#featured-container h3{
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 1.75em;
+    clear: both;
+    margin-left: 4%;
+}
+
+#featured-images{
+    margin-top: 7%;
+}
+
+#featured-images div:nth-child(2){
+    margin-top: 5%;
+}
+
+.featured-row{
+    display: flex;
+    justify-content: center;
+    column-gap: 8%;
+}
+
+#featured-images figure{
+    width: 30%;
+    height: auto;
+}
+
+#featured-images img{
+    width: 30%;
+    height: auto;
+    border: solid #ad9242 5px;
 }
 
 .footer{
     clear: both;
     text-align: center;
+    margin-bottom: 10%;
 }
 
 #social-links-container{

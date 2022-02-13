@@ -5,6 +5,10 @@ const storage = getStorage(firebaseApp);
 const bgImage = ref(storage, 'Images/site-background.jpg');
 const pfImage = ref(storage, 'Images/portfolio-image.jpg');
 const resume = ref(storage, 'Images/luffy.jpg');
+const featured1 = ref(storage, 'Images/Featured_1.jpg');
+const featured2 = ref(storage, 'Images/Featured_2.jpg');
+const featured3 = ref(storage, 'Images/Featured_3.jpg');
+const featured4 = ref(storage, 'Images/Featured_4.jpg');
 
 getDownloadURL(bgImage)
   .then((url) => {
@@ -42,11 +46,11 @@ getDownloadURL(bgImage)
         break;
     }
   });
-/*
-  getDownloadURL(resume)
+
+  getDownloadURL(featured1)
   .then((url) => {
-    const resumeLink = document.getElementById('download-resume-link');
-    resumeLink.href = url;
+    const fImage1 = document.getElementById('featured-1');
+    fImage1.src = url;
   })
   .catch((error) => {
     switch (error.code) {
@@ -58,4 +62,51 @@ getDownloadURL(bgImage)
         break;
     }
   });
-*/
+
+  getDownloadURL(featured2)
+  .then((url) => {
+    const fImage2 = document.getElementById('featured-2');
+    fImage2.src = url;
+  })
+  .catch((error) => {
+    switch (error.code) {
+      case 'storage/object-not-found':
+        break;
+      case 'storage/unauthorized':
+        break;
+      case 'storage/unknown':
+        break;
+    }
+  });
+
+  getDownloadURL(featured3)
+  .then((url) => {
+    const fImage3 = document.getElementById('featured-3');
+    fImage3.src = url;
+  })
+  .catch((error) => {
+    switch (error.code) {
+      case 'storage/object-not-found':
+        break;
+      case 'storage/unauthorized':
+        break;
+      case 'storage/unknown':
+        break;
+    }
+  });
+
+  getDownloadURL(featured4)
+  .then((url) => {
+    const fImage4 = document.getElementById('featured-4');
+    fImage4.src = url;
+  })
+  .catch((error) => {
+    switch (error.code) {
+      case 'storage/object-not-found':
+        break;
+      case 'storage/unauthorized':
+        break;
+      case 'storage/unknown':
+        break;
+    }
+  });
