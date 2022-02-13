@@ -10,6 +10,21 @@ const featured2 = ref(storage, 'Images/Featured_2.jpg');
 const featured3 = ref(storage, 'Images/Featured_3.jpg');
 const featured4 = ref(storage, 'Images/Featured_4.jpg');
 
+let lastScroll = 0;
+window.addEventListener("scroll", () => {
+
+  let currScroll = window.scrollY;
+  if (currScroll > lastScroll){ //effect added only for scrolling down
+    if (window.scrollY >=50 && window.scrollY <= 750){
+      window.scrollTo({
+        top: 750,
+        behavior: "smooth"
+      });
+    }
+  }
+  lastScroll = currScroll;
+});
+
 getDownloadURL(bgImage)
   .then((url) => {
     const bodyBg = document.getElementsByTagName('body')[0];
