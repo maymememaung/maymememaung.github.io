@@ -1,18 +1,8 @@
-/*
-html {
-    scroll-behavior: smooth;
-}
-*/
-
 body{
     margin: 0;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-#main-page-banner{
-    background-size: cover;
-    background-repeat: no-repeat;
+    font-family: 'Fredoka', sans-serif;
 }
 
 #resume-container{
@@ -21,38 +11,20 @@ body{
     float: left;
 }
 
-#resume-container > * {
-    display: inline;
-    font-family: 'Nunito', sans-serif;
+#view-resume-link{
     font-weight: 500;
-    font-size: 2em;
-    vertical-align: middle;
-}
-
-#resume-container .resume-braces{
-    font-weight: 300;
-    font-size: 3em;
-}
-
-#resume-container .spacing-blk{
-    width: 6%;
-    display: inline-block;
-}
-
-#download-resume-link{
-    font-family: 'Patrick Hand SC', cursive;
-    font-size: 1.75rem;
+    font-size: 1.35rem;
     color: black;
     text-decoration: none;
     animation: fadeIn 2s 2s forwards;
     visibility: hidden;
 }
 
-#download-resume-link:hover{
+#view-resume-link:hover{
     color: #696969;
 }
 
-#download-resume-link svg{
+#view-resume-link svg{
     transform: scale(65%);
 }
 
@@ -64,10 +36,9 @@ body{
 }
 
 #short-intro{
-    /*font-family: 'Kalam', cursive;*/
-    font-family: 'Patrick Hand SC', cursive;
-    font-size: 2em;
-    margin: 25% auto 12% auto;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 30% auto 12% auto;
     text-align: center;
     max-width: 80%;
     animation: fadeIn 2s 1s forwards;
@@ -82,8 +53,6 @@ body{
 }
 
 #scroll-container{
-    font-family: 'Patrick Hand SC', cursive;
-    font-size: 1.75em;
     clear: both;
     margin: 10% 0 5% 4%;
 }
@@ -92,9 +61,9 @@ body{
     margin-bottom: 10%;
 }
 
-#featured-container h3{
-    font-family: 'Patrick Hand SC', cursive;
-    font-size: 1.75em;
+#featured-container h3, #current-proj h3{
+    font-size: 1.5em;
+    font-weight: 500;
     clear: both;
     margin-left: 4%;
 }
@@ -151,6 +120,16 @@ body{
 
 .social-link svg:active{
     color: black;
+}
+
+#current-proj{
+    margin-right: 10%;
+}
+
+#current-proj ul{
+    font-size: 1.25rem;
+    color: black;
+    margin: 0 0 10% 5%;
 }
 
 @keyframes fadeIn{

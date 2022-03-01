@@ -8,43 +8,30 @@ const featured1 = ref(storage, 'Images/Featured_1.jpg');
 const featured2 = ref(storage, 'Images/Featured_2.jpg');
 const featured3 = ref(storage, 'Images/Featured_3.jpg');
 const featured4 = ref(storage, 'Images/Featured_4.jpg');
+const resume = ref(storage, 'Documents/Maung, May Me Me_Resume_CS.pdf');
 
-/*
-let lastScroll = 0;
-window.addEventListener("scroll", () => {
-
-  let currScroll = window.scrollY;
-  if (currScroll > lastScroll){ //effect added only for scrolling down
-    if (window.scrollY >=50 && window.scrollY <= 750){
-      window.scrollTo({
-        top: 750,
-        behavior: "smooth"
-      });
-    }
+const handleError = (error) =>{
+  // A full list of error codes is available at
+  // https://firebase.google.com/docs/storage/web/handle-errors
+  switch (error.code) {
+    case 'storage/object-not-found':
+      // File doesn't exist
+      break;
+    case 'storage/unauthorized':
+      // User doesn't have permission to access the object
+      break;
+    case 'storage/unknown':
+      // Unknown error occurred, inspect the server response
+      break;
   }
-  lastScroll = currScroll;
-});
-*/
-
+}
 getDownloadURL(bgImage)
   .then((url) => {
     const bodyBg = document.getElementsByTagName('body')[0];
     bodyBg.style.backgroundImage = "url("+url+")";
   })
   .catch((error) => {
-    // A full list of error codes is available at
-    // https://firebase.google.com/docs/storage/web/handle-errors
-    switch (error.code) {
-      case 'storage/object-not-found':
-        // File doesn't exist
-        break;
-      case 'storage/unauthorized':
-        // User doesn't have permission to access the object
-        break;
-      case 'storage/unknown':
-        // Unknown error occurred, inspect the server response
-        break;
-    }
+    handleError(error);
   });
 
   getDownloadURL(pfImage)
@@ -53,14 +40,7 @@ getDownloadURL(bgImage)
     pf.src = url;
   })
   .catch((error) => {
-    switch (error.code) {
-      case 'storage/object-not-found':
-        break;
-      case 'storage/unauthorized':
-        break;
-      case 'storage/unknown':
-        break;
-    }
+    handleError(error);
   });
 
   getDownloadURL(featured1)
@@ -69,14 +49,7 @@ getDownloadURL(bgImage)
     fImage1.src = url;
   })
   .catch((error) => {
-    switch (error.code) {
-      case 'storage/object-not-found':
-        break;
-      case 'storage/unauthorized':
-        break;
-      case 'storage/unknown':
-        break;
-    }
+    handleError(error);
   });
 
   getDownloadURL(featured2)
@@ -85,14 +58,7 @@ getDownloadURL(bgImage)
     fImage2.src = url;
   })
   .catch((error) => {
-    switch (error.code) {
-      case 'storage/object-not-found':
-        break;
-      case 'storage/unauthorized':
-        break;
-      case 'storage/unknown':
-        break;
-    }
+    handleError(error);
   });
 
   getDownloadURL(featured3)
@@ -101,14 +67,7 @@ getDownloadURL(bgImage)
     fImage3.src = url;
   })
   .catch((error) => {
-    switch (error.code) {
-      case 'storage/object-not-found':
-        break;
-      case 'storage/unauthorized':
-        break;
-      case 'storage/unknown':
-        break;
-    }
+    handleError(error);
   });
 
   getDownloadURL(featured4)
@@ -117,12 +76,14 @@ getDownloadURL(bgImage)
     fImage4.src = url;
   })
   .catch((error) => {
-    switch (error.code) {
-      case 'storage/object-not-found':
-        break;
-      case 'storage/unauthorized':
-        break;
-      case 'storage/unknown':
-        break;
-    }
+    handleError(error);
+  });
+
+  getDownloadURL(resume)
+  .then((url) => {
+    const resume_link = document.getElementById('view-resume-link');
+    resume_link.href = url;
+  })
+  .catch((error) => {
+    handleError(error);
   });
