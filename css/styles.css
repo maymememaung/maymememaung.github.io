@@ -93,6 +93,11 @@ body{
     border: solid #ad9242 5px;
 }
 
+#featured-images img:hover{
+    box-shadow: 0 0 20px rgba(33,33,33,0.35);
+    transform: translate(-5px, -5px);
+}
+
 .footer{
     clear: both;
     text-align: center;
